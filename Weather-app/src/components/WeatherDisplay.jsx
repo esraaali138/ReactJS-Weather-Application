@@ -4,11 +4,13 @@ import { SiRainmeter } from "react-icons/si";
 import { FaWind } from "react-icons/fa";
 import { GiPressureCooker } from "react-icons/gi";
 import axios from "axios";
-import { PuffLoader } from "react-spinners";
+import Loader from "./Loader";
+import SearchBar from "./SearchBar";
 const WeatherDisplay = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [city, setCity] = useState("");
+  const [isCelsius, setIsCelsius] = useState(true);
   useEffect(() => {
     async function fetchData() {
       if (city) {
@@ -27,42 +29,38 @@ const WeatherDisplay = () => {
         setWeatherData(null);
       }
     }
-
     fetchData();
   }, [city]);
 
-  const handleChange = (e) => {
-    setCity(e.target.value);
+  const convertCelsuisToFahrenheit = (Celsius) => Celsius * 1.8 + 32;
+
+  const handleToggle = () => {
+    setIsCelsius(!isCelsius);
   };
 
   return (
     <>
-      <div className="container flex justify-center">
-        <div className="bg-main w-[700px] p-5 mt-10 rounded-xl ">
+      <div className=" flex justify-center ">
+        <div className="bg-main md:w-[700px] p-5 mt-10 rounded-xl w-[450px] ">
           <p className="text-center text-3xl mt-2 text-[#bac2ce]">
             Weather App
           </p>
-          <div className="w-[500px] flex justify-between mx-auto mt-4">
-            <input
-              className="p-2 w-full text-[#bac2ce] outline-0 rounded-xl bg-primary placeholder-[#bac2ce]"
-              type="search"
-              placeholder="Search for cities"
-              onChange={handleChange}
-            />
-          </div>
+          <SearchBar setCity={setCity} />
           {loading ? (
-            <div className="flex justify-center mt-10">
-              <PuffLoader color="#4fa94d" size={80} />
-            </div>
+            <Loader />
           ) : weatherData ? (
             <div>
-              <div className="w-[450px] flex justify-between mx-auto">
-                <div className="h-32 flex flex-col gap-8 mt-4">
+              <div className="md:w-[450px] w-[350px] flex justify-between mx-auto">
+                <div className="h-32  flex flex-col gap-8 mt-4">
                   <p className="text-[#f2f1f2] text-2xl font-semibold capitalize">
                     {weatherData.name}
                   </p>
                   <p className="text-[#f2f1f2] text-3xl font-semibold ">
-                    {Math.round(weatherData.main.temp)} °C
+                    {isCelsius
+                      ? `${Math.round(weatherData.main.temp)} °C`
+                      : `${Math.round(
+                          convertCelsuisToFahrenheit(weatherData.main.temp)
+                        )} °F`}
                   </p>
                 </div>
                 <div className="flex justify-center items-center w-30 mx-4 ">
@@ -76,13 +74,16 @@ const WeatherDisplay = () => {
                 </div>
               </div>
               {/*  */}
-              <div className="w-[500px] mx-auto bg-primary rounded-xl mt-10">
+              <div className="md:w-[500px] w-[400px] mx-auto bg-primary rounded-xl mt-10">
                 <div className="p-5 w-full flex justify-between">
                   <p className="uppercase font-semibold text-[#707882]">
                     Air condition
                   </p>
-                  <button className="bg-[#199af9] text-white rounded-xl w-24 py-1">
-                    toggle
+                  <button
+                    onClick={handleToggle}
+                    className="bg-[#199af9] text-white rounded-xl px-4 py-2"
+                  >
+                    Temperature Unit
                   </button>
                 </div>
                 {/* air condition */}
