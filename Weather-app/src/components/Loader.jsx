@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Weather = () => {
+const Loader = () => {
   return (
     <div>
-      Weather
+   Loader   
     </div>
   )
 }
 
-export default Weather
+export default Loader

@@ -1,9 +1,9 @@
-import Weather from "../components/Weather"
+import WeatherDisplay from "./components/WeatherDisplay"
 function App() {
 
   return (
     <>
-    <Weather/>
+    <WeatherDisplay/>
     </>
   )
 }
