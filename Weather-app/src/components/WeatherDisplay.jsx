@@ -41,7 +41,7 @@ const WeatherDisplay = () => {
   return (
     <>
       <div className=" flex justify-center ">
-        <div className="bg-main md:w-[700px] p-5 mt-10 rounded-xl w-[450px] ">
+        <div className="bg-main md:w-[700px]  p-5 mt-10 rounded-xl  sm:w-[450px] w-[350px] ">
           <p className="text-center text-3xl mt-2 text-[#bac2ce]">
             Weather App
           </p>
@@ -50,7 +50,7 @@ const WeatherDisplay = () => {
             <Loader />
           ) : weatherData ? (
             <div>
-              <div className="md:w-[450px] w-[350px] flex justify-between mx-auto">
+              <div className="md:w-[450px]  sm:w-[350px] w-[280px] flex justify-between mx-auto">
                 <div className="h-32  flex flex-col gap-8 mt-4">
                   <p className="text-[#f2f1f2] text-2xl font-semibold capitalize">
                     {weatherData.name}
@@ -74,32 +74,33 @@ const WeatherDisplay = () => {
                 </div>
               </div>
               {/*  */}
-              <div className="md:w-[500px] w-[400px] mx-auto bg-primary rounded-xl mt-10">
-                <div className="p-5 w-full flex justify-between">
+              <div className="md:w-[500px] sm:w-[400px] mx-auto bg-primary rounded-xl mt-10">
+                <div className="sm:p-5 p-3 w-full text-sm sm:text-lg flex justify-between">
                   <p className="uppercase font-semibold text-[#707882]">
                     Air condition
                   </p>
                   <button
                     onClick={handleToggle}
-                    className="bg-[#199af9] text-white rounded-xl px-4 py-2"
+                    className="bg-[#199af9] text-white rounded-xl sm:px-4 px-2 py-2"
                   >
                     Temperature Unit
                   </button>
                 </div>
                 {/* air condition */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-5 w-full flex gap-2">
                     <span className="text-2xl text-[#707882]">
                       <FaWind />
                     </span>
-                    <div className="flex-col">
+                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[250px] max-w-full justify-between">
                       <p className="text-[#707882] font-semibold capitalize">
-                        wind
+                        Wind
                       </p>
                       <p className="text-[#bac2ce] text-xl font-semibold">
                         {Math.round(weatherData.wind.speed)} km/h
                       </p>
                     </div>
+
                     {/*  */}
                   </div>
                   {/*  */}
@@ -107,8 +108,8 @@ const WeatherDisplay = () => {
                     <span className="text-2xl text-[#707882]">
                       <GiPressureCooker />
                     </span>
-                    <div className="flex-col">
-                      <p className="text-[#707882] font-semibold capitalize">
+                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[250px] max-w-full justify-between">
+                    <p className="text-[#707882] font-semibold capitalize">
                         pressure
                       </p>
                       <p className="text-[#bac2ce] text-xl font-semibold">
@@ -122,7 +123,7 @@ const WeatherDisplay = () => {
                     <span className="text-2xl text-[#707882]">
                       <WiHumidity />
                     </span>
-                    <div className="flex-col">
+                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[250px] max-w-full justify-between">
                       <p className="text-[#707882] font-semibold capitalize">
                         humidity
                       </p>
@@ -137,7 +138,7 @@ const WeatherDisplay = () => {
                     <span className="text-2xl text-[#707882]">
                       <SiRainmeter />
                     </span>
-                    <div className="flex-col">
+                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[250px] max-w-full justify-between ">
                       <p className="text-[#707882] font-semibold capitalize">
                         Chance of rain
                       </p>
