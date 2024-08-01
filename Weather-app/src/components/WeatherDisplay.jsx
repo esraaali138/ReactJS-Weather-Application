@@ -152,7 +152,7 @@ const WeatherDisplay = () => {
               </div>
             </div>
           ) : (
-            <p className="text-center mt-10 text-[#bac2ce]">
+            <p className=" text-sm sm:text-lg text-center mt-10 text-[#bac2ce]">
               {" "}
               Please enter a city to see the weather information.
             </p>
