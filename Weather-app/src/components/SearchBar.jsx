@@ -6,7 +6,7 @@ const SearchBar = ({setCity}) => {
   };
 
   return (
-    <div className="md:w-[500px] w-[400px] flex justify-between mx-auto mt-4">
+    <div className="md:w-[500px] sm:w-[400px] flex justify-between mx-auto mt-4">
       <input
         className="p-2 w-full text-[#bac2ce] outline-0 rounded-xl bg-primary placeholder-[#bac2ce]"
         type="search"
