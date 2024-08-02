@@ -93,7 +93,7 @@ const WeatherDisplay = () => {
                     <span className="text-2xl text-[#707882]">
                       <FaWind />
                     </span>
-                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[250px] max-w-full justify-between">
+                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[246px] max-w-full justify-between">
                       <p className="text-[#707882] font-semibold capitalize">
                         Wind
                       </p>
@@ -109,7 +109,7 @@ const WeatherDisplay = () => {
                     <span className="text-2xl text-[#707882]">
                       <GiPressureCooker />
                     </span>
-                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[250px] max-w-full justify-between">
+                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[246px] max-w-full justify-between">
                       <p className="text-[#707882] font-semibold capitalize">
                         pressure
                       </p>
@@ -124,7 +124,7 @@ const WeatherDisplay = () => {
                     <span className="text-2xl text-[#707882]">
                       <WiHumidity />
                     </span>
-                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[250px] max-w-full justify-between">
+                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[246px] max-w-full justify-between">
                       <p className="text-[#707882] font-semibold capitalize">
                         humidity
                       </p>
@@ -139,7 +139,7 @@ const WeatherDisplay = () => {
                     <span className="text-2xl text-[#707882]">
                       <SiRainmeter />
                     </span>
-                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[250px] max-w-full justify-between ">
+                    <div className="flex sm:flex-col flex-row sm:w-[120px] w-[246px] max-w-full justify-between ">
                       <p className="text-[#707882] font-semibold capitalize">
                         Chance of rain
                       </p>
