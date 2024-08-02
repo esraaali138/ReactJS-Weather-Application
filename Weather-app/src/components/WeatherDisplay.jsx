@@ -19,6 +19,7 @@ const WeatherDisplay = () => {
           const res = await axios.get(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=72a04bb7a94c95433583019b45fb9048&units=metric`
           );
+
           setWeatherData(res.data);
           setLoading(false);
         } catch (error) {
@@ -109,7 +110,7 @@ const WeatherDisplay = () => {
                       <GiPressureCooker />
                     </span>
                     <div className="flex sm:flex-col flex-row sm:w-[120px] w-[250px] max-w-full justify-between">
-                    <p className="text-[#707882] font-semibold capitalize">
+                      <p className="text-[#707882] font-semibold capitalize">
                         pressure
                       </p>
                       <p className="text-[#bac2ce] text-xl font-semibold">
@@ -142,7 +143,9 @@ const WeatherDisplay = () => {
                       <p className="text-[#707882] font-semibold capitalize">
                         Chance of rain
                       </p>
-                      <p className="text-[#bac2ce] text-xl font-semibold">20</p>
+                      <p className="text-[#bac2ce] text-xl font-semibold">
+                        5 %
+                      </p>
                     </div>
                     {/*  */}
                   </div>
