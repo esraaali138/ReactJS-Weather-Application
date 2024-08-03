@@ -1,9 +1,10 @@
 # ReactJS-Weather-Application
 A simple weather application that allows users to get the current weather information for any city using the OpenWeatherMap API.
 
-#### Technologies Used
-
-
+## Technologies Used
+- ReactJs
+- Tailwind
+- Vitest for testing
 ## Features
 
 - Search for current weather by city name
